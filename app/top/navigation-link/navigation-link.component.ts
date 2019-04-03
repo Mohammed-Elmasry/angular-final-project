@@ -13,6 +13,7 @@ export class NavigationLinkComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.route);
   }
 
 }
