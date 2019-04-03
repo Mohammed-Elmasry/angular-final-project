@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -7,11 +8,16 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  email = new FormControl('');
-  password = new FormControl('');
+  registerForm = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl('')
+  });
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSubmit(){
+    console.log(this.registerForm.value);
+  }
 }
