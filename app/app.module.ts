@@ -13,6 +13,7 @@ import { RegisterComponent } from './forms/register/register.component';
 import { LoginFormComponent } from './forms/login-form/login-form.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { CartPageComponent } from './body/cart-page/cart-page.component';
+import { WishPageComponent } from './body/wish-page/wish-page.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { CartPageComponent } from './body/cart-page/cart-page.component';
     LoginFormComponent,
     HomePageComponent,
     CartPageComponent,
+    WishPageComponent,
   ],
   imports: [
     BrowserModule,
