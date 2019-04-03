@@ -12,6 +12,7 @@ import { CartCounterComponent } from './top/cart-counter/cart-counter.component'
 import { RegisterComponent } from './forms/register/register.component';
 import { LoginFormComponent } from './forms/login-form/login-form.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { CartPageComponent } from './body/cart-page/cart-page.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     RegisterComponent,
     LoginFormComponent,
     HomePageComponent,
+    CartPageComponent,
   ],
   imports: [
     BrowserModule,
