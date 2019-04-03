@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +9,7 @@ import { NavigationLinkComponent } from './top/navigation-link/navigation-link.c
 import { FooterComponent } from './footer/footer.component';
 import { WishCounterComponent } from './top/wish-counter/wish-counter.component';
 import { CartCounterComponent } from './top/cart-counter/cart-counter.component';
+import { RegisterComponent } from './forms/register/register.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { CartCounterComponent } from './top/cart-counter/cart-counter.component'
     NavigationLinkComponent,
     FooterComponent,
     WishCounterComponent,
-    CartCounterComponent
+    CartCounterComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
