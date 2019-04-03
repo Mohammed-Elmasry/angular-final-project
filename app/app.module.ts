@@ -11,6 +11,7 @@ import { WishCounterComponent } from './top/wish-counter/wish-counter.component'
 import { CartCounterComponent } from './top/cart-counter/cart-counter.component';
 import { RegisterComponent } from './forms/register/register.component';
 import { LoginFormComponent } from './forms/login-form/login-form.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { LoginFormComponent } from './forms/login-form/login-form.component';
     CartCounterComponent,
     RegisterComponent,
     LoginFormComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
