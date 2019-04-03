@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { WishCounterComponent } from './top/wish-counter/wish-counter.component';
 import { CartCounterComponent } from './top/cart-counter/cart-counter.component';
 import { RegisterComponent } from './forms/register/register.component';
+import { LoginFormComponent } from './forms/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { RegisterComponent } from './forms/register/register.component';
     WishCounterComponent,
     CartCounterComponent,
     RegisterComponent,
+    LoginFormComponent,
   ],
   imports: [
     BrowserModule,
