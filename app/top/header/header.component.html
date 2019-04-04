@@ -1,7 +1,9 @@
 <header>
-  <app-navigation-link [link]="linkHome" [route]="'Home'"></app-navigation-link>
-  <app-navigation-link [link]="linkCart" [route]="'Cart'"></app-navigation-link>
-  <app-navigation-link [link]="linkWish" [route]="'Wish'"></app-navigation-link>
+  <ul class="nav">
+    <li *ngFor="let link of links">
+      <app-navigation-link [link]="link" [route]="link | uppercase"></app-navigation-link>
+    </li>
+  </ul>
   <app-cart-counter></app-cart-counter>
   <app-wish-counter></app-wish-counter>
   <app-username-logout></app-username-logout>
