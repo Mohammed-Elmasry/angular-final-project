@@ -16,7 +16,7 @@ import { LoginFormComponent } from './forms/login-form/login-form.component';
 import { HomePageComponent } from './body/home-page/home-page.component';
 import { CartPageComponent } from './body/cart-page/cart-page.component';
 import { WishPageComponent } from './body/wish-page/wish-page.component';
-import { UsernameLogoutComponent } from './resources/username-logout/username-logout.component';
+import { UsernameLogoutComponent } from './top/username-logout/username-logout.component';
 
 @NgModule({
   declarations: [
