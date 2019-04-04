@@ -7,9 +7,9 @@ import { NavigationLinkComponent } from '../navigation-link/navigation-link.comp
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public linkHome: string = 'Home';
-  public linkCart: string = "Cart";
-  public linkWish: string = "Wish";
+  public linkHome: string = '/home';
+  public linkCart: string = "/cart";
+  public linkWish: string = "/wish";
   constructor() { }
 
   ngOnInit() {
