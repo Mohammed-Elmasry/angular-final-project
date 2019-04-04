@@ -11,7 +11,7 @@ import { WishCounterComponent } from './top/wish-counter/wish-counter.component'
 import { CartCounterComponent } from './top/cart-counter/cart-counter.component';
 import { RegisterComponent } from './forms/register/register.component';
 import { LoginFormComponent } from './forms/login-form/login-form.component';
-import { HomePageComponent } from './home-page/home-page.component';
+import { HomePageComponent } from './body/home-page/home-page.component';
 import { CartPageComponent } from './body/cart-page/cart-page.component';
 import { WishPageComponent } from './body/wish-page/wish-page.component';
 

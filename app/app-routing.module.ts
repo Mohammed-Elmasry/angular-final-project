@@ -5,6 +5,7 @@ import { CartCounterComponent } from './top/cart-counter/cart-counter.component'
 import { WishCounterComponent } from './top/wish-counter/wish-counter.component';
 
 const routes: Routes = [
+  {path:'', redirectTo:'home', pathMatch:'full'},
   {path:'home', component:HomePageComponent},
   {path:'cart', component:CartCounterComponent},
   {path:'wish', component:WishCounterComponent}
