@@ -33,7 +33,6 @@ import { SingleProductDisplayPageComponent } from './body/single-product-display
     CartPageComponent,
     WishPageComponent,
     UsernameLogoutComponent,
-    SingleProductDisplayComponent,
     SingleProductDisplayPageComponent,
   ],
   imports: [
