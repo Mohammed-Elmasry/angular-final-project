@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+.nav-item {
+    float:left;
+    list-style-type: none;
+    padding-left: 2em;
+    position: relative;
+    align-items: stretch;
+}
+
+nav {
+    background: #369;
+}
