@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomePageComponent } from './body/home-page/home-page.component';
-import { CartCounterComponent } from './top/cart-counter/cart-counter.component';
-import { WishCounterComponent } from './top/wish-counter/wish-counter.component';
+import { CartPageComponent } from './body/cart-page/cart-page.component';
+import { WishPageComponent } from './body/wish-page/wish-page.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},
   {path:'home', component:HomePageComponent},
-  {path:'cart', component:CartCounterComponent},
-  {path:'wish', component:WishCounterComponent}
+  {path:'cart', component:CartPageComponent},
+  {path:'wish', component:WishPageComponent}
 ];
 
 @NgModule({
