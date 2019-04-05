@@ -1,14 +1,20 @@
 <header>
-  <nav class="navbar navbar-inverse">
-    <div>
-      <ul>
-        <li class="nav-item" *ngFor="let link of links">
-          <app-navigation-link [link]="link" [route]="link | uppercase"></app-navigation-link>
-        </li>
-      </ul>
-      <app-cart-counter class="nav-item"></app-cart-counter>
-      <app-wish-counter class="nav-item"></app-wish-counter>
-      <app-username-logout class="nav-item"></app-username-logout>
-    </div>
-  </nav>
+  <div class="row">
+    <nav class="navbar navbar-inverse col-lg-12">
+      <div class="row">
+        <div class="col-lg-11">
+          <ul>
+            <li class="nav-item" *ngFor="let link of links">
+              <app-navigation-link [link]="link" [route]="link | uppercase"></app-navigation-link>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-1 header-right-aligned">
+          <app-cart-counter class="nav-item"></app-cart-counter>
+          <app-wish-counter class="nav-item"></app-wish-counter>
+          <app-username-logout class="nav-item"></app-username-logout>
+        </div>
+      </div>
+    </nav>
+  </div>
 </header>
