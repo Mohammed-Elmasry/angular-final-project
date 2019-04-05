@@ -17,6 +17,7 @@ import { HomePageComponent } from './body/home-page/home-page.component';
 import { CartPageComponent } from './body/cart-page/cart-page.component';
 import { WishPageComponent } from './body/wish-page/wish-page.component';
 import { UsernameLogoutComponent } from './top/username-logout/username-logout.component';
+import { SingleProductDisplayPageComponent } from './body/single-product-display-page/single-product-display-page.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,8 @@ import { UsernameLogoutComponent } from './top/username-logout/username-logout.c
     CartPageComponent,
     WishPageComponent,
     UsernameLogoutComponent,
+    SingleProductDisplayComponent,
+    SingleProductDisplayPageComponent,
   ],
   imports: [
     BrowserModule,
