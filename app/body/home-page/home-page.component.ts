@@ -1,6 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Product } from 'src/app/models/product';
-
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -8,7 +7,6 @@ import { Product } from 'src/app/models/product';
 })
 export class HomePageComponent implements OnInit {
   //building products array
-  public cart: number = 0;
   public products: Product[][] = [[{
     "ProductId": "HT-1000",
     "Description": "Notebook Basic 15 with 2,80 GHz quad core, 15\" LCD, 4 GB DDR3 RAM, 500 GB Hard Disc, Windows 8 Pro",
@@ -75,10 +73,5 @@ export class HomePageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
-
-  increaseCart(){
-    this.cart++;
-    console.log(this.cart);
   }
 }
