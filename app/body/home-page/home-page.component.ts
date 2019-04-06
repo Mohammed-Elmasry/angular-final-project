@@ -8,6 +8,7 @@ import { Product } from 'src/app/models/product';
 })
 export class HomePageComponent implements OnInit {
   //building products array
+  public cols = 3;
   public products: Product[] = [{
     "ProductId": "HT-1000",
     "Description": "Notebook Basic 15 with 2,80 GHz quad core, 15\" LCD, 4 GB DDR3 RAM, 500 GB Hard Disc, Windows 8 Pro",
