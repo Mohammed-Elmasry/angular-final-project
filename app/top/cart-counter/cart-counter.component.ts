@@ -9,16 +9,18 @@ import { ProductTransferService } from 'src/app/services/product-transfer.servic
 })
 export class CartCounterComponent implements OnInit {
   public subscription = Subscription;
-  public products = [];
+  public products = {};
   public num: number = 0;
 
   constructor(private transferProduct: ProductTransferService) {
     this.transferProduct.getProduct().subscribe((product) => {
       if (product) {
-        this.products.push(product);
-        // console.log("received product: ", product);
-        console.log(this.products);
-        this.num = this.products.length;
+        if(this.products[product] === undefined){ //not undefined
+          this.products[product] = 1;
+        } else {
+          this.products[product]++;
+        }
+        this.num = this.count(this.products);
       } else {
         console.log("no products received");
       }
@@ -26,6 +28,12 @@ export class CartCounterComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  count(obj){
+    let count = Object.values(obj);
+    let arrsum = arr => arr.reduce((a, b) => a + b, 0);
+    return arrsum(count);
   }
 
 
