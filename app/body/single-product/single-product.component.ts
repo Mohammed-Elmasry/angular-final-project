@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from 'src/app/models/product';
+import { ProductTransferService } from 'src/app/services/product-transfer.service';
 
 @Component({
   selector: 'app-single-product',
@@ -8,8 +9,10 @@ import { Product } from 'src/app/models/product';
 })
 export class SingleProductComponent implements OnInit {
   @Input() product: Product;
-  constructor() { }
+  constructor(private productTransfer: ProductTransferService) { }
 
   ngOnInit() {
   }
+
+  
 }
