@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductTransferService } from 'src/app/services/product-transfer.service';
 
 @Component({
   selector: 'app-cart-counter',
@@ -8,9 +9,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 })
 export class CartCounterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private transferProduct: ProductTransferService) { }
 
   ngOnInit() {
   }
+
+  
 
 }
