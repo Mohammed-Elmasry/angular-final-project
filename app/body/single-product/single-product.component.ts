@@ -14,5 +14,7 @@ export class SingleProductComponent implements OnInit {
   ngOnInit() {
   }
 
-  
+  transferProduct(): void {
+    this.productTransfer.sendProduct(this.product);
+  }
 }
