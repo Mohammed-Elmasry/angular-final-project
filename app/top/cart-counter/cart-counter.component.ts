@@ -10,7 +10,7 @@ import { ProductTransferService } from 'src/app/services/product-transfer.servic
 export class CartCounterComponent implements OnInit {
   public subscription = Subscription;
   public products = {};
-  public num: number = 0;
+  public numProducts: number = 0;
 
   constructor(private transferProduct: ProductTransferService) {
     this.transferProduct.getProduct().subscribe((product) => {
@@ -23,13 +23,13 @@ export class CartCounterComponent implements OnInit {
         } else {
           this.products[product["Name"]]++;
         }
-        this.num = this.count(this.products);
+        this.numProducts = this.count(this.products);
       } else {
         console.log("no products received");
       }
       // console.log(Object.keys(this.products));
       // console.log(this.products[product["package"]]);
-      // console.log(this.num);
+      // console.log(this.numProducts);
       console.log(product);
     });
 
