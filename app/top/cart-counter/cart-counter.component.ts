@@ -15,27 +15,33 @@ export class CartCounterComponent implements OnInit {
   constructor(private transferProduct: ProductTransferService) {
     this.transferProduct.getProduct().subscribe((product) => {
       if (product) {
-        if(this.products[product] === undefined){ //not undefined
-          this.products[product] = 1;
+        if (this.products[product["Name"]] === undefined) { //not undefined
+          console.log("this is first time, add to products");
+          console.log(product["Name"]);
+          this.products[product["Name"]] = 1;
+          // console.log("Hello: ",this.products[product["Name"]]);
         } else {
-          this.products[product]++;
+          this.products[product["Name"]]++;
         }
         this.num = this.count(this.products);
       } else {
         console.log("no products received");
       }
+      // console.log(Object.keys(this.products));
+      // console.log(this.products[product["package"]]);
+      // console.log(this.num);
+      console.log(product);
     });
-  }
+
+  } 
 
   ngOnInit() {
   }
 
-  count(obj){
+  count(obj) {
     let count = Object.values(obj);
     let arrsum = arr => arr.reduce((a, b) => a + b, 0);
     return arrsum(count);
   }
-
-
 
 }

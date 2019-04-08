@@ -8,7 +8,7 @@ export class ProductTransferService {
   private subject = new Subject<any>();
 
   sendProduct(product: Product): void {
-    this.subject.next({ package: product });
+    this.subject.next( product );
   }
 
   clearProduct(): void {
