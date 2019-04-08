@@ -1,5 +1,11 @@
-<button type="button" class="btn btn-outline-secondary mr-2" popoverTitle="Popover on bottom" [popoverTitle]="popTitle"
-    ngbPopover="This is my PopOver." placement="bottom">
-    CartCounter
-    <span class="badge badge-secondary">{{num}}</span>
-</button>
+<div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+    <button type="button" class="btn btn-outline-secondary mr-2" ngbDropdownAnchor (focus)="myDrop.open()">
+        CartCounter
+        <span class="badge badge-secondary">{{num}}</span>
+    </button>
+    <div ngbDropdownMenu aria-labelledby="dropdownManual">
+        <li ngbDropdownItem>Action - 1</li>
+        <li ngbDropdownItem>Another Action</li>
+        <li ngbDropdownItem>Something else is here</li>
+    </div>
+</div>
