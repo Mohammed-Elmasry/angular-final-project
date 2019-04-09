@@ -1,0 +1,23 @@
+.x{
+    float: right;
+    color: black;
+    background-color: white;
+    font-weight: bold;
+    // padding:  0 15px;
+    &:hover{
+        color: red;   
+        cursor: pointer;
+    }
+
+}
+
+li {
+    font-size: 12px;
+    span {
+        
+        margin-right: 15%;
+    }
+}
+.dropdown-menu{
+    min-width: 20rem;
+}
