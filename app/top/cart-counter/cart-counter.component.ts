@@ -54,5 +54,6 @@ export class CartCounterComponent implements OnInit {
 
     this.numProducts = this.count(this.products);
   }
+  
 
 }
