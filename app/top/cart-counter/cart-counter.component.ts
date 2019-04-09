@@ -28,9 +28,6 @@ export class CartCounterComponent implements OnInit {
       } else {
         console.log("no products received");
       }
-      // console.log(Object.keys(this.products));
-      // console.log(this.products[product["package"]]);
-      // console.log(this.numProducts);
       console.log(product);
     });
 
@@ -54,6 +51,6 @@ export class CartCounterComponent implements OnInit {
 
     this.numProducts = this.count(this.products);
   }
-  
+
 
 }
