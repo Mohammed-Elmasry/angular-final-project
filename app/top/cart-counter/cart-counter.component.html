@@ -1,7 +1,7 @@
 <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
     <button type="button" class="btn btn-outline-secondary mr-2" ngbDropdownAnchor (focus)="myDrop.open()">
         CartCounter
-        <span class="badge badge-secondary">{{numProducts}}</span>
+        <span class="badge badge-success badge-secondary"><b>{{numProducts}}</b></span>
     </button>
     <div *ngIf="products" class="container">
         <div *ngIf="products" ngbDropdownMenu aria-labelledby="dropdownManual" class="row">
