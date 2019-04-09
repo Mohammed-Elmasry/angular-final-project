@@ -3,11 +3,11 @@
         CartCounter
         <span class="badge badge-secondary">{{numProducts}}</span>
     </button>
-    <div class="container">
-        <div ngbDropdownMenu aria-labelledby="dropdownManual">
-            <li ngbDropdownItem>HT-1000<span class=" x">X</span></li>
-            <li ngbDropdownItem>HT-1000<span class="btn-danger x">X</span></li>
-            <li ngbDropdownItem>HT-1000<span class="btn-danger x">X</span></li>
+    <div *ngIf="products" class="container">
+        <div *ngIf="products" ngbDropdownMenu aria-labelledby="dropdownManual" class="row">
+            <li *ngFor="let product of products | keyvalue" ngbDropdownItem>{{product.key}}
+                <span class="badge badge-pill badge-success"><b>{{product.value}}</b></span><span (click)="removeProduct(product)"
+                    class="btn x">X</span></li>
         </div>
     </div>
 </div>

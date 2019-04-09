@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ProductTransferService } from 'src/app/services/product-transfer.service';
+import { Product } from 'src/app/models/product';
 
 @Component({
   selector: 'app-cart-counter',
@@ -33,7 +34,7 @@ export class CartCounterComponent implements OnInit {
       console.log(product);
     });
 
-  } 
+  }
 
   ngOnInit() {
   }
@@ -42,6 +43,16 @@ export class CartCounterComponent implements OnInit {
     let countArray = Object.values(obj);
     let arrsum = arr => arr.reduce((a, b) => a + b, 0);
     return arrsum(countArray);
+  }
+
+  removeProduct(product) {
+    if (this.products[product.key] > 1) {
+      this.products[product.key]--;
+    } else {
+      delete this.products[product.key];
+    }
+
+    this.numProducts = this.count(this.products);
   }
 
 }
