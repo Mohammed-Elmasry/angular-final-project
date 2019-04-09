@@ -39,9 +39,9 @@ export class CartCounterComponent implements OnInit {
   }
 
   count(obj) {
-    let count = Object.values(obj);
+    let countArray = Object.values(obj);
     let arrsum = arr => arr.reduce((a, b) => a + b, 0);
-    return arrsum(count);
+    return arrsum(countArray);
   }
 
 }
