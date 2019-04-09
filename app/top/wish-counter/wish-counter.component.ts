@@ -8,15 +8,15 @@ import { Product } from 'src/app/models/product';
   styleUrls: ['./wish-counter.component.scss']
 })
 export class WishCounterComponent implements OnInit {
-  private productList: Product[] = [];
+  private productsList: Product[] = [];
   private numProducts = 0;
 
   constructor(private product2wishlist: Product2WishlistService) {
     this.product2wishlist.getProduct().subscribe((product) => {
       if (product) {
-        if (this.productList.indexOf(product) === -1) { //product not in wishlist
-          this.productList.push(product);
-          this.numProducts = this.productList.length;
+        if (this.productsList.indexOf(product) === -1) { //product not in wishlist
+          this.productsList.push(product);
+          this.numProducts = this.productsList.length;
         } else { //product already added
           alert("product is already within the wishlist");
         }
@@ -28,5 +28,13 @@ export class WishCounterComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  removeProduct(product) {
+    if (this.productsList.indexOf(product) !== -1) {
+      this.productsList.splice(this.productsList.indexOf(product), 1); //remove that product
+    }
+    this.numProducts = this.productsList.length;
+  }
+
 
 }

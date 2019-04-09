@@ -3,9 +3,9 @@
         Wishcounter
         <span class="badge badge-secondary">{{numProducts}}</span>
     </button>
-    <div *ngIf="productList" class="container">
-        <div *ngIf="productList" ngbDropdownMenu aria-labelledby="dropdownManual" class="row">
-            <li *ngFor="let product of productList" ngbDropdownItem>{{product.Name}}
+    <div *ngIf="productsList" class="container">
+        <div *ngIf="productsList" ngbDropdownMenu aria-labelledby="dropdownManual" class="row">
+            <li *ngFor="let product of productsList" ngbDropdownItem>{{product.Name}}
                 <span class="badge badge-pill badge-success"></span><span
                     (click)="removeProduct(product)" class="btn x">X</span></li>
         </div>
