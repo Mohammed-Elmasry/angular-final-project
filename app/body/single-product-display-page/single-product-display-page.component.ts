@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductInjectorService } from 'src/app/services/product-injector.service';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
 import { Product } from 'src/app/models/product';
 @Component({
   selector: 'app-single-product-display-page',
@@ -24,7 +23,7 @@ export class SingleProductDisplayPageComponent implements OnInit {
           console.log(this.currentProduct);
         }
       }
-    })
+    });
   }
 
   ngOnInit() {
