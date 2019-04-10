@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from 'src/app/models/product';
-import { ProductTransferService } from 'src/app/services/product-transfer.service';
-import { Product2WishlistService } from 'src/app/services/product2-wishlist.service';
+import { ProductTransferService } from 'src/app/services/productsServices/product-transfer.service';
+import { Product2WishlistService } from 'src/app/services/productsServices/product2-wishlist.service';
 
 @Component({
   selector: 'app-single-product',

@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Product } from 'src/app/models/product';
-import { ProductInjectorService } from '../../services/product-injector.service';
+import { ProductInjectorService } from '../../services/productsServices/product-injector.service';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',

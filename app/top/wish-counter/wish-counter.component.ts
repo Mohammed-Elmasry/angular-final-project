@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { Product2WishlistService } from 'src/app/services/product2-wishlist.service';
+import { Product2WishlistService } from 'src/app/services/productsServices/product2-wishlist.service';
 import { Product } from 'src/app/models/product';
 @Component({
   selector: 'app-wish-counter',

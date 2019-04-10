@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ProductTransferService } from 'src/app/services/product-transfer.service';
+import { ProductTransferService } from 'src/app/services/productsServices/product-transfer.service';
 import { Product } from 'src/app/models/product';
 
 @Component({
