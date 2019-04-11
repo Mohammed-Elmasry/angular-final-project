@@ -1,0 +1,27 @@
+{
+    "accounts": {
+        "mohammed": {
+            "info": {
+                "username": "mohammed",
+                "password": "SiliconCore",
+                "email": "mohammed.hussein.mahmoud@gmail.com"
+            },
+            "cart": {
+                "mobile J6+": 2,
+                "BENQ monitor": 1
+            },
+            "wishlist": [
+                "Sony Ericso, Smart tv, HomeNetwork"
+            ],
+            "authenticated": [
+                true,
+                false
+            ]
+        }
+    },
+    "authenticated": [
+        "mohammed",
+        "Ahmed",
+        "Moustafa"
+    ]
+}
