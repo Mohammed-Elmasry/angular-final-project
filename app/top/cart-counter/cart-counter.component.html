@@ -6,8 +6,8 @@
     <div *ngIf="products" class="container">
         <div *ngIf="products" ngbDropdownMenu aria-labelledby="dropdownManual" class="row">
             <li *ngFor="let product of products | keyvalue" ngbDropdownItem>{{product.key}}
-                <span class="badge badge-pill badge-success"><b>{{product.value}}</b></span><span (click)="removeProduct(product)"
-                    class="btn x">X</span></li>
+                <span class="badge badge-pill badge-success"><b>{{product.value}}</b></span><span
+                    (click)="removeProduct(product)" class="btn x">X</span></li>
         </div>
     </div>
 </div>
