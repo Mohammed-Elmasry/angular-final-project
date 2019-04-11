@@ -21,6 +21,7 @@ import { WishPageComponent } from './body/wish-page/wish-page.component';
 import { UsernameLogoutComponent } from './top/username-logout/username-logout.component';
 import { SingleProductDisplayPageComponent } from './body/single-product-display-page/single-product-display-page.component';
 import { SingleProductComponent } from './body/single-product/single-product.component';
+import { MustMatch } from './forms/shared/must-match.directive';
 
 @NgModule({
   declarations: [
