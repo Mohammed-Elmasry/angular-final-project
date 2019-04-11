@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -7,16 +7,28 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  registerForm = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl('')
+  public registrationForm;
+
+  /* registerForm = new FormGroup({
+    email: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required)
+  }); */
+
+  registerForm = this.fb.group({
+    username: ['',Validators.required],
+    email: ['', Validators.required],
+    password: ['', Validators.required]
   });
-  constructor() { }
+  
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    
   }
 
-  onSubmit(){
+  onSubmit() {
     console.log(this.registerForm.value);
+    localStorage.setItem("accounts"["username"], JSON.stringify(this.registerForm.value));
+    alert("registered successfully");
   }
 }
