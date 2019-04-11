@@ -9,37 +9,26 @@ import { MustMatch } from 'src/app/forms/shared/must-match.directive';
 export class RegisterComponent implements OnInit {
   public registrationForm;
 
-  /* registerForm = new FormGroup({
-    email: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required)
-  }); */
-
   registerForm = this.fb.group({
-    username: ['',Validators.required],
+    username: ['', Validators.required],
     email: ['', Validators.required],
     password: ['', [Validators.required, Validators.minLength(8)]],
     conf_password: ['', Validators.required]
-  
+
   },{
-    validator:MustMatch('password','conf_password')
+    validator:MustMatch('password',
+    'conf_password')
   });
-  
+
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-    
+
   }
 
   onSubmit() {
-    if(this.registerForm.valid){ // validation passed successfully
-      console.log(this.registerForm.value);
-      alert("registered successfully");
-    } else {
-      console.error("registration failed");
-    }
+    console.log(this.registerForm.value);
+    localStorage.setItem("accounts", JSON.stringify(this.registerForm.value));
+    alert("registered successfully");
   }
-
-  // convenience getter for easy access to form fields
-  get f() { return this.registerForm.controls; }
-
 }
