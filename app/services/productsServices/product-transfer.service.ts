@@ -9,6 +9,8 @@ export class ProductTransferService {
 
   sendProduct(product: Product): void {
     this.subject.next( product );
+    localStorage.setItem("product", JSON.stringify(product));
+    console.log("Picked up products in service");
   }
 
   clearProduct(): void {
@@ -16,6 +18,7 @@ export class ProductTransferService {
   }
 
   getProduct(): Observable<any> {
+    console.log("delivering product")
     return this.subject.asObservable();
   }
 

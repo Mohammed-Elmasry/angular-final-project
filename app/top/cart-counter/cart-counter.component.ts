@@ -28,7 +28,7 @@ export class CartCounterComponent implements OnInit {
       } else {
         console.log("no products received");
       }
-      console.log(product);
+      // console.log(product);
     });
 
   }

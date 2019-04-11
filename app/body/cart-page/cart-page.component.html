@@ -1,13 +1,17 @@
 <!--in a cart, you add products that you're going to buy-->
-<table>
-  <tr>
-    <td>Product Name</td>
-    <td>Product Image</td>
-    <td>Product Price</td>
-    <td>Units Number</td>
-    <td>Total Price</td>
-  </tr>
-  <tr>
+<table class="table">
+  <thead>
+    <th>Product Name</th>
+    <th>Product Image</th>
+    <th>Product Price</th>
+    <th>Units Number</th>
+    <th>Total Price</th>
+  </thead>
+  <tr *ngFor="let product of products | keyvalue">
+    <td>{{product.key.Name}}</td>
+    <td></td>
+    <td></td>
+    <td></td>
     <td></td>
   </tr>
 </table>
