@@ -7,6 +7,7 @@ import { SingleProductDisplayPageComponent } from './body/single-product-display
 import { LoginFormComponent } from './forms/login-form/login-form.component';
 import { RegisterComponent } from './forms/register/register.component';
 import { AuthGuard } from './auth/auth.guard';
+import { LoggedinAuthGuard } from './auth/loggedin-auth.guard'
 
 const routes: Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},
@@ -15,7 +16,7 @@ const routes: Routes = [
   {path:'wish', component:WishPageComponent, canActivate:[AuthGuard]},
   {path:'details/:id', component: SingleProductDisplayPageComponent, canActivate:[AuthGuard]},
   {path: 'login', component: LoginFormComponent, },
-  {path: 'register', component: RegisterComponent}
+  {path: 'register', component: RegisterComponent,}
 ];
 
 @NgModule({
