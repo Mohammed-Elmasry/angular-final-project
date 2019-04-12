@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Router } from '@angular/router';
+import { LoginInfoService } from 'src/app/services/users/login-info.service';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -14,7 +15,8 @@ export class LoginFormComponent implements OnInit {
   });
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private loginInfoService: LoginInfoService
   ) { }
 
   ngOnInit() {
@@ -28,6 +30,7 @@ export class LoginFormComponent implements OnInit {
       if (accounts[username]["info"]["username"] === username) {
         if (accounts[username]["info"]["password"] === password) {
           console.log("You're logged in");
+          this.loginInfoService.sendUsername(username);
           this.authService.login();
           this.router.navigate(['/home']);
         } else {

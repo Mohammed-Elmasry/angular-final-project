@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-
+import { Observable, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class LoginInfoService {
-  private username: string;
-  constructor() { }
+  private subject = new Subject<any>();
 
-  setUsername(username: string): void {
-    this.username = username;
+  sendUsername(username: string): void {
+    this.subject.next( username );
   }
 
-  getUsername(): string {
-    return this.username;
+  getUsername(): Observable<any> {
+    return this.subject.asObservable();
   }
+
 }

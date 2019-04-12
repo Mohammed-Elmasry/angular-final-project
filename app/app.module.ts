@@ -22,6 +22,7 @@ import { UsernameLogoutComponent } from './top/username-logout/username-logout.c
 import { SingleProductDisplayPageComponent } from './body/single-product-display-page/single-product-display-page.component';
 import { SingleProductComponent } from './body/single-product/single-product.component';
 import { MustMatch } from './forms/shared/must-match.directive';
+import { LoginInfoService } from './services/users/login-info.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { MustMatch } from './forms/shared/must-match.directive';
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [ProductInjectorService],
+  providers: [ProductInjectorService, LoginInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
