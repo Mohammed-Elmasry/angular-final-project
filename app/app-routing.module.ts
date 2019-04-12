@@ -14,7 +14,7 @@ const routes: Routes = [
   {path:'cart', component:CartPageComponent, canActivate:[AuthGuard]},
   {path:'wish', component:WishPageComponent, canActivate:[AuthGuard]},
   {path:'details/:id', component: SingleProductDisplayPageComponent, canActivate:[AuthGuard]},
-  {path: 'login', component: LoginFormComponent},
+  {path: 'login', component: LoginFormComponent, },
   {path: 'register', component: RegisterComponent}
 ];
 

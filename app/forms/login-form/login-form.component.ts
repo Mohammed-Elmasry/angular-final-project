@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -7,16 +9,36 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class LoginFormComponent implements OnInit {
   loginForm = new FormGroup({
-    email: new FormControl(''),
+    username: new FormControl(''),
     password: new FormControl('')
   });
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
 
-  onSubmit(){
-    // console.log("From login Form: ",this.loginForm.value)
-    console.log(this.loginForm)
+  onSubmit() {
+    let username = this.loginForm.controls.username.value;
+    let password = this.loginForm.controls.password.value;
+    let accounts = JSON.parse(localStorage.getItem("accounts"));
+    if (accounts[username] !== undefined) {
+      if (accounts[username]["info"]["username"] === username) {
+        if (accounts[username]["info"]["password"] === password) {
+          console.log("You're logged in");
+          this.authService.login();
+          this.router.navigate(['/home']);
+        } else {
+          console.log("Incorrect password");
+        }
+      } else {
+        console.log("account not found");
+      }
+    } else {
+      console.log("Incorrect username or password!");
+    }
+    // console.log(this.loginForm)
   }
 }

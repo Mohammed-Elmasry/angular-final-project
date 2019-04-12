@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MustMatch } from 'src/app/forms/shared/must-match.directive';
+import { AuthService } from 'src/app/services/auth/auth.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -20,7 +21,10 @@ export class RegisterComponent implements OnInit {
         'conf_password')
     });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService
+  ) { }
 
   ngOnInit() {
 
@@ -30,26 +34,21 @@ export class RegisterComponent implements OnInit {
 
     //preparing localStorage
     let accounts = {};
-    let registeredAccounts = [];
     localStorage.setItem("accounts", JSON.stringify(accounts));
-    localStorage.setItem("registeredAccounts", JSON.stringify(registeredAccounts));
 
     //taking data from form
     let username = this.registerForm.controls.username.value;
+    let password = this.registerForm.controls.password.value;
     let userbody = this.registerForm.value;
     let userObject = { "info": userbody };
 
     accounts = JSON.parse(localStorage.getItem("accounts"));
-    registeredAccounts = JSON.parse(localStorage.getItem("registeredAccounts"));
-
-    console.log(typeof registeredAccounts);
     if (accounts !== null) {
       accounts[username] = userObject;
-      registeredAccounts.push(username);
-
-      localStorage.setItem("registeredAccounts", JSON.stringify(registeredAccounts));
+      console.log(accounts);
       localStorage.setItem("accounts", JSON.stringify(accounts));
-
+      console.log("activate authService from onSubmit");
+      this.authService.login();
       console.log("this is second time...and again");
     } else {
       alert("No localStorage database is setup");
