@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./username-logout.component.scss']
 })
 export class UsernameLogoutComponent implements OnInit {
+  private username: string = "";
 
   constructor(private authService: AuthService,
     private router: Router
