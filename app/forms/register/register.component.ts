@@ -15,10 +15,10 @@ export class RegisterComponent implements OnInit {
     password: ['', [Validators.required, Validators.minLength(8)]],
     conf_password: ['', Validators.required]
 
-  },{
-    validator:MustMatch('password',
-    'conf_password')
-  });
+  }, {
+      validator: MustMatch('password',
+        'conf_password')
+    });
 
   constructor(private fb: FormBuilder) { }
 
@@ -27,8 +27,32 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.registerForm.value);
-    localStorage.setItem("accounts", JSON.stringify(this.registerForm.value));
-    alert("registered successfully");
+
+    //preparing localStorage
+    let accounts = {};
+    let registeredAccounts = [];
+    localStorage.setItem("accounts", JSON.stringify(accounts));
+    localStorage.setItem("registeredAccounts", JSON.stringify(registeredAccounts));
+
+    //taking data from form
+    let username = this.registerForm.controls.username.value;
+    let userbody = this.registerForm.value;
+    let userObject = { "info": userbody };
+
+    accounts = JSON.parse(localStorage.getItem("accounts"));
+    registeredAccounts = JSON.parse(localStorage.getItem("registeredAccounts"));
+
+    console.log(typeof registeredAccounts);
+    if (accounts !== null) {
+      accounts[username] = userObject;
+      registeredAccounts.push(username);
+
+      localStorage.setItem("registeredAccounts", JSON.stringify(registeredAccounts));
+      localStorage.setItem("accounts", JSON.stringify(accounts));
+
+      console.log("this is second time...and again");
+    } else {
+      alert("No localStorage database is setup");
+    }
   }
 }
