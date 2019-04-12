@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MustMatch } from 'src/app/forms/shared/must-match.directive';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -23,7 +24,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -49,6 +51,7 @@ export class RegisterComponent implements OnInit {
       localStorage.setItem("accounts", JSON.stringify(accounts));
       console.log("activate authService from onSubmit");
       this.authService.login();
+      this.router.navigate(['/home']);
       console.log("this is second time...and again");
     } else {
       alert("No localStorage database is setup");
