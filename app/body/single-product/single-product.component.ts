@@ -16,6 +16,7 @@ export class SingleProductComponent implements OnInit {
   }
 
   transferProduct(): void {
+    
     this.productTransfer.sendProduct(this.product);
     console.log("Product handed to service");
   }
