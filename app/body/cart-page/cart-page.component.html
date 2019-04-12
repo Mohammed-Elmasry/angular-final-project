@@ -8,10 +8,10 @@
     <th>Total Price</th>
   </thead>
   <tr *ngFor="let product of products | keyvalue">
-    <td>{{product.Name}}</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>{{product.key.Name}}</td>
+    <td>{{product.key.img}}</td>
+    <td>{{product.key.Price}}</td>
+    <td>{{products.value}}</td>
+    <td>{{products.value}}*{{product.key.Price}}</td>
   </tr>
 </table>

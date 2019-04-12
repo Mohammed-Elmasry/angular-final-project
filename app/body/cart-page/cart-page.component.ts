@@ -9,18 +9,19 @@ import { LoginInfoService } from 'src/app/services/users/login-info.service';
 export class CartPageComponent implements OnInit {
   public products;
   public username;
+  public totalPrice;
+
   constructor(private productTransfer: ProductTransferService,
     private loginInfoService: LoginInfoService) {
 
     this.loginInfoService.getUsername().subscribe((username) => {
       this.username = username;
       this.products = JSON.parse(localStorage.getItem("accounts"))[username].cart;
-      console.log("try to print your cart",this.products);
+      console.log("try to print your cart", this.products);
     });
   }
 
   ngOnInit() {
 
   }
-
 }
